@@ -1,0 +1,50 @@
+console.dir(h1);
+
+function handleTitleClick() {
+    const currentColor = h1.style.color;
+    let newColor;
+    if(currentColor === "blue") {  
+        newColor ="green";
+    }
+    else {
+        newColor = "blue";
+    }
+    h1.style.color=newColor;
+    
+}
+
+function handleMouseEnter() {
+    h1.innerText = "Mouse is here!";
+}
+
+function handleMouseLeave() {
+    h1.innerText = "Mouse is gone!";
+}
+
+function handleWindowResize() {
+    document.body.style.backgroundImage = "url(IMG_9430.jpeg)";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+}
+function handleWindowCopy() {
+    alert("copier!");
+}
+
+function handleWindowOffline() {
+    alert("SOS no WIFI!!");
+}
+
+function handleWindowOnline() {
+    alert("connect ON WIFI!!");
+}
+
+//title.onclick = handleTitleClick;
+h1.addEventListener("click", handleTitleClick);
+h1.addEventListener("mouseenter", handleMouseEnter);
+h1.addEventListener("mouseleave", handleMouseLeave);
+
+window.addEventListener("resize", handleWindowResize); //브라우저 크기 조절시 발생
+window.addEventListener("copy", handleWindowCopy); // ctrl+c 입력시 발생
+window.addEventListener("offline", handleWindowOffline); //인터넷 비활성시
+window.addEventListener("online", handleWindowOnline); //인터넷 연결시
